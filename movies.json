@@ -1,0 +1,86 @@
+[
+    {
+        "title": "UMA NOVA ESPERANÇA",
+        "year": 1977,
+        "episode": "IV",
+        "section": "classica",
+        "img": "https://bit.ly/2TIetq4"
+    },
+    {
+        "title": "O IMPÉRIO CONTRA ATACA",
+        "year": 1980,
+        "episode": "V",
+        "section": "classica",
+        "img": "https://bit.ly/3gtXArQ"
+    },
+    {
+        "title": "O RETORNO JEDI",
+        "year": 1983,
+        "episode": "VI",
+        "section": "classica",
+        "img": "https://bit.ly/3cNern8"
+    },
+    {
+        "title": "A AMEAÇA FANTASMA",
+        "year": 1993,
+        "episode": "I",
+        "section": "prequel",
+        "img": "https://bit.ly/3xsioFX"
+    },
+    {
+        "title": "ATAQUE DOS CLONES",
+        "year": 2002,
+        "episode": "II",
+        "section": "prequel",
+        "img": "https://bit.ly/3vur0ud"
+    },
+    {
+        "title": "A VINGANÇA DOS SITH",
+        "year": 2005,
+        "episode": "III",
+        "section": "prequel",
+        "img": "https://bit.ly/35qWXZJ"
+    },
+    {
+        "title": "O DESPERTAR DA FORÇA",
+        "year": 2015,
+        "episode": "VII",
+        "section": "nova",
+        "img": "https://bit.ly/3zsIzOJ"
+    },
+    {
+        "title": "OS ÚLTIMOS JEDI",
+        "year": 2017,
+        "episode": "VIII",
+        "section": "nova",
+        "img": "https://bit.ly/3xvaPhw"
+    },
+    {
+        "title": "A ASCENÇÃO DE SKYWALKER",
+        "year": 2019,
+        "episode": "IX",
+        "section": "nova",
+        "img": "https://bit.ly/3vx59lS"
+    },
+    {
+        "title": "ROGUE ONE",
+        "year": 2016,
+        "episode": null,
+        "section": "spin",
+        "img": "https://bit.ly/3guHP44"
+    },
+    {
+        "title": "HAN SOLO",
+        "year": 2018,
+        "episode": null,
+        "section": "spin",
+        "img": "https://bit.ly/3iOIa34"
+    },
+    {
+        "title": "THE MANDALORIAN",
+        "year": 2019,
+        "episode": null,
+        "section": "serie",
+        "img": "https://bit.ly/3xuocim"
+    }
+]
