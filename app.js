@@ -32,6 +32,24 @@ function filterMovies(section) {
 }
 
 
+async function sendData(message) {
+    const { titulo, cor, param } = elements.find(elem => elem.comando == message.content)
+    let url = urlBase + param
+    let results = []
+    do {
+        const response = await axios.get(url)
+        const { data } = response
+        results = results.concat(data.results)
+        url = data.next
+    } while (url != null)
+
+    const msg = new Discord.MessageEmbed()
+    msg.setTitle(titulo)
+        .setColor(cor)
+    msg.setDescription(results.map(dado => dado.name || dado.title))
+    message.channel.send(msg)
+}
+
 async function responseCommand(message) {
     if (message.author.bot == false) {
         switch (message.content.toLowerCase()) {
@@ -73,35 +91,8 @@ async function responseCommand(message) {
                 !especies
                 !veiculos
                 !naves`))
-
         }
-
-
-
-
     }
 }
-
-
-async function sendData(message) {
-    const { titulo, cor, param } = elements.find(elem => elem.comando == message.content)
-    let url = urlBase + param
-    let results = []
-    do {
-        const response = await axios.get(url)
-        const { data } = response
-        results = results.concat(data.results)
-        url = data.next
-    } while (url != null)
-
-    const msg = new Discord.MessageEmbed()
-    msg.setTitle(titulo)
-        .setColor(cor)
-    msg.setDescription(results.map(dado => dado.name || dado.title))
-    message.channel.send(msg)
-}
-
-
-
 
 bot.login('ODY0OTgwNDcxNDI3NDk4MDU1.YO9V1g.PW8Y3XnNC0gg4Gk8-3QQcUtEGX4');
