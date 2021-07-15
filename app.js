@@ -4,6 +4,7 @@ const bot = new Discord.Client()
 const elements = require('./elementosAPI.json')
 const axios = require('axios')
 const urlBase = 'https://swapi.dev/api/'
+require('dotenv/config')
 
 
 bot.on('message', responseCommand)
@@ -95,4 +96,4 @@ async function responseCommand(message) {
     }
 }
 
-bot.login('ODY0OTgwNDcxNDI3NDk4MDU1.YO9V1g.PW8Y3XnNC0gg4Gk8-3QQcUtEGX4');
+bot.login(process.env.DISCORD_TOKEN);
