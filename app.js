@@ -1,11 +1,14 @@
-
 const Discord = require('discord.js')
 const movies = require('./movies.json')
 const bot = new Discord.Client()
+const elements = require('./elementosAPI.json')
+const axios = require('axios')
+const urlBase = 'https://swapi.dev/api/'
+
 
 bot.on('message', responseCommand)
 
-function mountMsg(array, message) {
+function sendMsg(array, message) {
 
     array.map(filme => {
         const msg = new Discord.MessageEmbed()
@@ -29,24 +32,47 @@ function filterMovies(section) {
 }
 
 
-function responseCommand(message) {
+async function responseCommand(message) {
     if (message.author.bot == false) {
         switch (message.content.toLowerCase()) {
-            case ('!starwars'): { mountMsg(movies, message); break }
-            case ('!nova'): { mountMsg(filterMovies('nova'), message); break }
-            case ('!prequel'): { mountMsg(filterMovies('prequel'), message); break }
-            case ('!classica'): { mountMsg(filterMovies('classica'), message); break }
-            case ('!spin'): { mountMsg(filterMovies('spin'), message); break }
-            case ('!serie'): { mountMsg(filterMovies('serie'), message); break }
-            default: message.channel.send(`Olá, ${message.author.username}, os comandos disponíveis são:
+            case ('!starwars'): { sendMsg(movies, message); break }
+            case ('!nova'): { sendMsg(filterMovies('nova'), message); break }
+            case ('!prequel'): { sendMsg(filterMovies('prequel'), message); break }
+            case ('!classica'): { sendMsg(filterMovies('classica'), message); break }
+            case ('!spin'): { sendMsg(filterMovies('spin'), message); break }
+            case ('!serie'): { sendMsg(filterMovies('serie'), message); break }
+
+            case ('!planetas'):
+            case ('!personagens'):
+            case ('!filmes'):
+            case ('!especies'):
+            case ('!veiculos'):
+            case ('!naves'): { await sendData(message); break }
+
+
+
+
+            default: message.channel.send(new Discord.MessageEmbed()
+                .setTitle("Comandos")
+                .setColor("#151fd6")
+                .setDescription(`Olá, ${message.author.username}, os comandos disponíveis são:
             Para listar todos os filmes:
                 !starwars 
+
             Para listar fimes por seção:
                 !nova
                 !prequel
                 !classica
                 !spin
-                !serie`)
+                !serie
+                
+            Para listar outros elementos:
+                !planetas
+                !personagens
+                !filmes
+                !especies
+                !veiculos
+                !naves`))
 
         }
 
@@ -55,6 +81,26 @@ function responseCommand(message) {
 
     }
 }
+
+
+async function sendData(message) {
+    const { titulo, cor, param } = elements.find(elem => elem.comando == message.content)
+    let url = urlBase + param
+    let results = []
+    do {
+        const response = await axios.get(url)
+        const { data } = response
+        results = results.concat(data.results)
+        url = data.next
+    } while (url != null)
+
+    const msg = new Discord.MessageEmbed()
+    msg.setTitle(titulo)
+        .setColor(cor)
+    msg.setDescription(results.map(dado => dado.name || dado.title))
+    message.channel.send(msg)
+}
+
 
 
 

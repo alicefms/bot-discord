@@ -1,0 +1,38 @@
+[
+    {
+        "comando": "!personagens",
+        "titulo": "Personagens",
+        "param": "people",
+        "cor": "#ff59ee"
+    },
+    {
+        "comando": "!planetas",
+        "titulo": "Planetas",
+        "param": "planets",
+        "cor": "#151fd6"
+    },
+    {
+        "comando": "!filmes",
+        "titulo": "Filmes(ate o sexto)",
+        "param": "films",
+        "cor": "#12c937"
+    },
+    {
+        "comando": "!especies",
+        "titulo": "Espécies",
+        "param": "species",
+        "cor": "#ae07e0"
+    },
+    {
+        "comando": "!veiculos",
+        "titulo": "Veículos",
+        "param": "vehicles",
+        "cor": "#f7f8fc"
+    },
+    {
+        "comando": "!naves",
+        "titulo": "Naves",
+        "param": "starships",
+        "cor": "#506350"
+    }
+]
