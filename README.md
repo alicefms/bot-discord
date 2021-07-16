@@ -18,7 +18,7 @@ Status: falta refatorar para separar funções.
 ## Features: 
 </br>
 
-lista todos os filmes de Star Wars
+- lista todos os filmes de Star Wars
 - filtra filmes por trilogia
 - lista planetas
 - lista personages da saga
