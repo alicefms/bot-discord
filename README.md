@@ -6,6 +6,8 @@
 Projeto desenvolvido durante Iniciativa Padawan, mentorada por Felipe Reinaux (@fereinaux).
 
 Foi construído um bot que lista alguns elementos da saga Star Wars, como filmes, personagens, naves...
+Para exibir os dados, o bot consulta um arquivo .json com os objetos dos filmes de toda a saga, para os demais elementos, consulta uma api pública: https://swapi.dev/
+
 
 o Bot foi deployado no heroku, e é possível colocá-lo numa sala no Discord com o adm do servidor clicando neste link:
 
